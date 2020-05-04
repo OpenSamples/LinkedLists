@@ -42,6 +42,16 @@ class ListOfNumbers {
     first = newNode;
   }
   
+  public void RemoveLastNode() {
+  
+    
+  }
+  
+  public void ReverseList() {
+  
+    
+  }
+  
   public String toString() {
     String result = "List: [ ";
     Node current = first;
