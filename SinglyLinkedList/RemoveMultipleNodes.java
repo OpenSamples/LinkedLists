@@ -123,15 +123,13 @@ class CharList {
     String result = "[ ";
     Node current = first;
     while (current != null) {
+      result += current.data;
       if (current.next != null) {
-        result += current.data + ", ";
-      }
-      else {
-        result += current.data + " ";
+        result += ", ";
       }
       current = current.next;
     }
-    result += "]";
+    result += " ]";
     return result;
   }
 }
