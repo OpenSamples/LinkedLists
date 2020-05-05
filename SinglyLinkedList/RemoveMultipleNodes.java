@@ -53,25 +53,37 @@ class CharList {
     first = newNode;
   }
   
+  // Removes nodes, which contain lower case letter
+  // as character, from the list.
+  // Returns the number of removed nodes(characters).
   public int removeAllLowerCaseLetters() {
     int counter = 0;
-    // remove datas from beginning of the list
+    // Remove character from the beginning of the list
+    // if it's lower case letter. 
     while (first != null && first.data >= 'a' && first.data <= 'z') {
+      // Set first to be next node.
       first = first.next;
+      // Character is lower case letter, increase counter by one.
       counter++;
     }
-    // looking for lower case letters in the rest to the list
+    // Looking for lower case letters in the rest to the list.
     if (first != null) {
+      // Copy reference from first node into current variable.
       Node current = first;
+      // Loop through list while current node doesn't point to null.
       while (current.next != null) {
-        // moving step by step until last node
+        // Copy current reference into previous variable.
         Node previous = current;
+        // Set current to next node.
         current = current.next;
+        // If character is lower case letter.
         if (current.data >= 'a' && current.data <= 'z') {
-          // moving pointers around the node
+          // Moving pointers around the node.
+          // Set previous node to point where current node is poining to.
           previous.next = current.next;
+          // Character is lower case letter, it's removed from the list.
           counter++;
-          // moving one step back to check this node in the next cycle
+          // Moving one step back to check this node in the next cycle.
           current = previous;
         }
       }
