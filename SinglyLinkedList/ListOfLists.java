@@ -6,21 +6,23 @@ public class ListOfLists {
   }
 }
 
-class ListOfBoxes {
+class ListOfStorages {
+
+  private Box firstBox;
   
-  class Box {
+  class Storage {
     String name;
-    Box next;
-    Item content;
+    Storage next;
+    Box content;
     
-    public Box(String name) {
+    public Storage(String name) {
       this.name = name;
       this.next = null;
     }
     
     public String toString() {
       String result = "[" + name + "]";
-      Item current = content;
+      Box current = content;
       if (current != null) {
         result += " " + current;
         current = current.next;
@@ -29,19 +31,18 @@ class ListOfBoxes {
           current = current.next;
         }
       }
-      result += " }";
+      result += " ]";
       return result;
     }
-    
   }
   
-  class Item {
+  class Box {
     String name;
-    Item next;
+    Box next;
     
-    public Item(String item) {
-      name = item;
-      next = null;
+    public Box(String name) {
+      this.name = name;
+      this.next = null;
     }
     
     public String toString() {
@@ -49,4 +50,5 @@ class ListOfBoxes {
     }
   }
 }
+
 
